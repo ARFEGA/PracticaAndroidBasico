@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/nombre_plato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="Fabada Asturiana" />
+
+    <ImageView
+        android:id="@+id/plato_image"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/nombre_plato"
+        android:contentDescription="Fabada Asturiana"
+        android:src="@drawable/fabada" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toRightOf="@id/plato_image"
+        android:layout_toEndOf="@id/plato_image"
+        android:layout_below="@id/nombre_plato"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/plato_image"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/text_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="10€" />
+
+        <TextView
+            android:id="@+id/titulo_alergenos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Alergenos" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alergeno_huevo" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alergeno_leche" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:src="@drawable/alergeno_cereal_con_gluten" />
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/descripcion_plato"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            tools:text="Soleado con algunas" />
+    </LinearLayout>
+
+</RelativeLayout>
+
+
