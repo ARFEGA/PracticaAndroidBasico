@@ -10,7 +10,7 @@ import com.example.armando.practicaandroidbasico.model.Mesa
 import com.example.armando.practicaandroidbasico.model.Pedido
 import com.example.armando.practicaandroidbasico.model.Plato
 
-class PedidosMesaAdapter(private val mesa:Mesa):
+class PedidosMesaAdapter(private var mesa:Mesa):
         RecyclerView.Adapter<PedidosMesaAdapter.PlatoViewHolder>() {
 
     var onPlatoClickListener:View.OnClickListener? = null
@@ -29,7 +29,6 @@ class PedidosMesaAdapter(private val mesa:Mesa):
 
     override fun onBindViewHolder(holder: PlatoViewHolder, position: Int) {
         val plato = mesa.pedidos[position].plato
-        //La mesa de MesaViewHolder es la mesa aquí creada
         holder.plato = plato
 
     }
@@ -46,6 +45,7 @@ class PedidosMesaAdapter(private val mesa:Mesa):
                 itemView.findViewById<TextView>(R.id.observaciones).text = value.observaciones
             }
             field = value
+
         }
 
 

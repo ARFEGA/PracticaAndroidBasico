@@ -68,9 +68,11 @@ class PlatosActivity : AppCompatActivity() {
                         setResult(Activity.RESULT_OK,returnIntent)
                         finish()
 
+
                     })
                     .setNegativeButton(android.R.string.cancel,null)
                     .show()
+
 
         }
         list.adapter = adapter

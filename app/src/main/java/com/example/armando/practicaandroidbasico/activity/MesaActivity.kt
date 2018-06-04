@@ -13,12 +13,8 @@ import android.view.View
 import android.widget.EditText
 import com.example.armando.practicaandroidbasico.R
 import com.example.armando.practicaandroidbasico.adapter.PedidosMesaAdapter
-import com.example.armando.practicaandroidbasico.model.Mesa
+import com.example.armando.practicaandroidbasico.model.*
 
-import com.example.armando.practicaandroidbasico.model.Mesas
-import com.example.armando.practicaandroidbasico.model.Pedido
-
-import com.example.armando.practicaandroidbasico.model.Platos
 import kotlinx.android.synthetic.main.activity_mesa.*
 
 
@@ -41,9 +37,13 @@ class MesaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mesa)
-
-        val mesa = Mesas.getMesa(intent.getIntExtra(EXTRA_MESA,0))
-
+        val selectedMesa = intent.getIntExtra(EXTRA_MESA,0) - 1
+        val mesa = Mesas.getMesa(selectedMesa)
+        mesa.pedidos.add(Pedido(comensal=1, plato = Platos.getPlato(1)))
+        mesa.pedidos.add(Pedido(comensal=1, plato = Platos.getPlato(2)))
+        mesa.pedidos.add(Pedido(comensal=1, plato = Platos.getPlato(3)))
+        mesa.pedidos.add(Pedido(comensal=1, plato = Platos.getPlato(4)))
+        updateMesaInfo(mesa)
 
         //Creación de lista de mesas
         val list: RecyclerView = pedidos_mesa_list_recycler
@@ -80,6 +80,13 @@ class MesaActivity : AppCompatActivity() {
                 }
 
             }
+        }
+    }
+    //Para incluir información en ActionBar
+    private fun updateMesaInfo(mesa:Mesa) {
+        if(this is AppCompatActivity) {
+            val supportActionBar = (this as? AppCompatActivity)?.supportActionBar
+            supportActionBar?.title = "MESA: ${mesa.numero} (${mesa.comensales} comensales)"
         }
     }
 

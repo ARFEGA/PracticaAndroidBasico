@@ -37,9 +37,9 @@ class GestionSalonActivity :AppCompatActivity() {
 
 
 
-        val btnMesa :Button = findViewById(R.id.button_mesa)
+      /*  val btnMesa :Button = findViewById(R.id.button_mesa)
         btnMesa.setOnClickListener {
             startActivity(MesaActivity.newIntent(this, 1)) }
-
+*/
     }
 }
